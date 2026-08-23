@@ -66,7 +66,7 @@ async function resolveYoutube(videoId) {
 
 
   const result = await execa(
-    "./yt-dlp",
+    "yt-dlp",
     [
       "--extractor-args",
       "youtube:player_client=android",
