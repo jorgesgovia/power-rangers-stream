@@ -60,7 +60,7 @@ app.get(
 
 app.get(
   "/stream/:type/:id.json",
-  (req, res) => {
+  async (req, res) => {
     try {
       const {
         type,
@@ -153,7 +153,7 @@ app.get(
       }
 
       const streams =
-        getStream(
+        await getStream(
           imdbId,
           seasonNumber,
           episodeNumber
