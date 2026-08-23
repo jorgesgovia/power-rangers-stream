@@ -63,19 +63,19 @@ async function resolveYoutube(videoId) {
     `🎬 Resolviendo YouTube → ${videoId}`
   );
 
-
-  const result = await ytdlp(
-    `https://www.youtube.com/watch?v=${videoId}`,
-    {
-      extractorArgs:
-        "youtube:player_client=android",
-      getUrl: true,
-      format: "18"
-    }
+  const result = await execa(
+    "./yt-dlp",
+    [
+      "--extractor-args",
+      "youtube:player_client=android",
+      "--get-url",
+      "-f",
+      "18",
+      `https://www.youtube.com/watch?v=${videoId}`
+    ]
   );
 
-
-  return result.trim();
+  return result.stdout.trim();
 }
 
 
