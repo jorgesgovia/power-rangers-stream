@@ -118,6 +118,8 @@ export function getStream(
     title:
       `${series.name} — ${episode.name}`,
 
+    type: "http",
+
     url:
       `https://www.youtube.com/watch?v=${encodeURIComponent(
         episode.videoId
