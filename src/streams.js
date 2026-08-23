@@ -114,17 +114,9 @@ export function getStream(
 
   const stream = {
     name: "Power Rangers Stream",
-
     title:
       `${series.name} — ${episode.name}`,
-
-    type: "http",
-
-    url:
-      `https://www.youtube.com/watch?v=${encodeURIComponent(
-        episode.videoId
-      )}`,
-
+    ytId: episode.videoId,
     behaviorHints: {
       bingeGroup:
         `power-rangers-${series.slug}`
