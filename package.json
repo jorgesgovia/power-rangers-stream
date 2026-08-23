@@ -4,8 +4,7 @@
   "description": "Power Rangers stream addon powered by YouTube.",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "postinstall": "python3 -m pip install --user yt-dlp"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
