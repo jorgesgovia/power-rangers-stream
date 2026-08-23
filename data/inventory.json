@@ -1,0 +1,316 @@
+{
+  "series": [
+    {
+      "imdbId": "tt0092379",
+      "slug": "mighty-morphin-power-rangers",
+      "name": "Mighty Morphin Power Rangers",
+      "seasons": [
+        {
+          "season": 1,
+          "episodes": [
+            {
+              "episode": 1,
+              "name": "Mighty Morphin Power Rangers E01",
+              "videoId": "wTh2Aj3gPqI"
+            },
+            {
+              "episode": 2,
+              "name": "Mighty Morphin Power Rangers E02",
+              "videoId": "EUuEP0KuxuA"
+            },
+            {
+              "episode": 3,
+              "name": "Mighty Morphin Power Rangers E03",
+              "videoId": "pS7ysJAQH_Q"
+            },
+            {
+              "episode": 4,
+              "name": "Mighty Morphin Power Rangers E04",
+              "videoId": "lYhPZx51w6k"
+            },
+            {
+              "episode": 5,
+              "name": "Mighty Morphin Power Rangers E05",
+              "videoId": "GUnAuJhe-FI"
+            },
+            {
+              "episode": 6,
+              "name": "Mighty Morphin Power Rangers E06",
+              "videoId": "Ju8NJzjYjII"
+            },
+            {
+              "episode": 7,
+              "name": "Mighty Morphin Power Rangers E07",
+              "videoId": "3nu9NCLjgaM"
+            },
+            {
+              "episode": 8,
+              "name": "Mighty Morphin Power Rangers E08",
+              "videoId": "bV8nkzlX0j0"
+            },
+            {
+              "episode": 9,
+              "name": "Mighty Morphin Power Rangers E09",
+              "videoId": "-lj4kJaXnzw"
+            },
+            {
+              "episode": 10,
+              "name": "Mighty Morphin Power Rangers E10",
+              "videoId": "eBQTMYF8f5k"
+            },
+            {
+              "episode": 11,
+              "name": "Mighty Morphin Power Rangers E11",
+              "videoId": "mXlNez_mPcI"
+            },
+            {
+              "episode": 12,
+              "name": "Mighty Morphin Power Rangers E12",
+              "videoId": "d48JWBEyOTM"
+            },
+            {
+              "episode": 13,
+              "name": "Mighty Morphin Power Rangers E13",
+              "videoId": "Ic6qbpUZrME"
+            },
+            {
+              "episode": 14,
+              "name": "Mighty Morphin Power Rangers E14",
+              "videoId": "uvy6Yco2sCg"
+            },
+            {
+              "episode": 15,
+              "name": "Mighty Morphin Power Rangers E15",
+              "videoId": "nQb8KA9aOEQ"
+            },
+            {
+              "episode": 16,
+              "name": "Mighty Morphin Power Rangers E16",
+              "videoId": "OPcpfnLsews"
+            },
+            {
+              "episode": 17,
+              "name": "Mighty Morphin Power Rangers E17",
+              "videoId": "dUt21W1DkSY"
+            },
+            {
+              "episode": 18,
+              "name": "Mighty Morphin Power Rangers E18",
+              "videoId": "pQu-m6KP4IU"
+            },
+            {
+              "episode": 19,
+              "name": "Mighty Morphin Power Rangers E19",
+              "videoId": "KTegQt8hJQI"
+            },
+            {
+              "episode": 20,
+              "name": "Mighty Morphin Power Rangers E20",
+              "videoId": "rcdN5_KO5eg"
+            },
+            {
+              "episode": 21,
+              "name": "Mighty Morphin Power Rangers E21",
+              "videoId": "Ri2k9fK2pL8"
+            },
+            {
+              "episode": 22,
+              "name": "Mighty Morphin Power Rangers E22",
+              "videoId": "ERMy9OCBh4E"
+            },
+            {
+              "episode": 23,
+              "name": "Mighty Morphin Power Rangers E23",
+              "videoId": "Go6lf-EeQAs"
+            },
+            {
+              "episode": 24,
+              "name": "Mighty Morphin Power Rangers E24",
+              "videoId": "IS1i7hVdmEo"
+            },
+            {
+              "episode": 25,
+              "name": "Mighty Morphin Power Rangers E25",
+              "videoId": "9RnHLZP2zv8"
+            },
+            {
+              "episode": 26,
+              "name": "Mighty Morphin Power Rangers E26",
+              "videoId": "eYsR7nQb1GM"
+            },
+            {
+              "episode": 27,
+              "name": "Mighty Morphin Power Rangers E27",
+              "videoId": "Pq__t1I-LuM"
+            },
+            {
+              "episode": 28,
+              "name": "Mighty Morphin Power Rangers E28",
+              "videoId": "8vw6HcRrqBI"
+            },
+            {
+              "episode": 29,
+              "name": "Mighty Morphin Power Rangers E29",
+              "videoId": "wmpx-uoxkVw"
+            },
+            {
+              "episode": 30,
+              "name": "Mighty Morphin Power Rangers E30",
+              "videoId": "7hoEuBCNK3g"
+            },
+            {
+              "episode": 31,
+              "name": "Mighty Morphin Power Rangers E31",
+              "videoId": "nIkP6XF5oqE"
+            },
+            {
+              "episode": 32,
+              "name": "Mighty Morphin Power Rangers E32",
+              "videoId": "BRu8Yc8wPqg"
+            },
+            {
+              "episode": 33,
+              "name": "Mighty Morphin Power Rangers E33",
+              "videoId": "VxkV9280R9M"
+            },
+            {
+              "episode": 34,
+              "name": "Mighty Morphin Power Rangers E34",
+              "videoId": "98kWJ9r2qF4"
+            },
+            {
+              "episode": 35,
+              "name": "Mighty Morphin Power Rangers E35",
+              "videoId": "borlHjsLHlY"
+            },
+            {
+              "episode": 36,
+              "name": "Mighty Morphin Power Rangers E36",
+              "videoId": "wygNyiMimrw"
+            },
+            {
+              "episode": 37,
+              "name": "Mighty Morphin Power Rangers E37",
+              "videoId": "sI_fN9Bizbk"
+            },
+            {
+              "episode": 38,
+              "name": "Mighty Morphin Power Rangers E38",
+              "videoId": "Km_7dU0ivrk"
+            },
+            {
+              "episode": 39,
+              "name": "Mighty Morphin Power Rangers E39",
+              "videoId": "-Sihvk7UklA"
+            },
+            {
+              "episode": 40,
+              "name": "Mighty Morphin Power Rangers E40",
+              "videoId": "sYn471f0pKQ"
+            },
+            {
+              "episode": 41,
+              "name": "Mighty Morphin Power Rangers E41",
+              "videoId": "uZ568CW-M7I"
+            },
+            {
+              "episode": 42,
+              "name": "Mighty Morphin Power Rangers E42",
+              "videoId": "2_ughZzmKF4"
+            },
+            {
+              "episode": 43,
+              "name": "Mighty Morphin Power Rangers E43",
+              "videoId": "MnqYLJWVIZI"
+            },
+            {
+              "episode": 44,
+              "name": "Mighty Morphin Power Rangers E44",
+              "videoId": "ypP1L8FzcV8"
+            },
+            {
+              "episode": 45,
+              "name": "Mighty Morphin Power Rangers E45",
+              "videoId": "_UjND1g4mSc"
+            },
+            {
+              "episode": 46,
+              "name": "Mighty Morphin Power Rangers E46",
+              "videoId": "3DhTiufwGoc"
+            },
+            {
+              "episode": 47,
+              "name": "Mighty Morphin Power Rangers E47",
+              "videoId": "Lr_ScjCYkis"
+            },
+            {
+              "episode": 48,
+              "name": "Mighty Morphin Power Rangers E48",
+              "videoId": "KjaLhQUzslw"
+            },
+            {
+              "episode": 49,
+              "name": "Mighty Morphin Power Rangers E49",
+              "videoId": "skOHs9RRbe0"
+            },
+            {
+              "episode": 50,
+              "name": "Mighty Morphin Power Rangers E50",
+              "videoId": "SRMXrfdNA_o"
+            },
+            {
+              "episode": 51,
+              "name": "Mighty Morphin Power Rangers E51",
+              "videoId": "mIVBKy9JznQ"
+            },
+            {
+              "episode": 52,
+              "name": "Mighty Morphin Power Rangers E52",
+              "videoId": "KYxil1cSggA"
+            },
+            {
+              "episode": 53,
+              "name": "Mighty Morphin Power Rangers E53",
+              "videoId": "E7zyYRgCGPI"
+            },
+            {
+              "episode": 54,
+              "name": "Mighty Morphin Power Rangers E54",
+              "videoId": "PbgXqUDMMNI"
+            },
+            {
+              "episode": 55,
+              "name": "Mighty Morphin Power Rangers E55",
+              "videoId": "4xZjW5q6azI"
+            },
+            {
+              "episode": 56,
+              "name": "Mighty Morphin Power Rangers E56",
+              "videoId": "VzahN7RHQYQ"
+            },
+            {
+              "episode": 57,
+              "name": "Mighty Morphin Power Rangers E57",
+              "videoId": "GlQymbgTg-0"
+            },
+            {
+              "episode": 58,
+              "name": "Mighty Morphin Power Rangers E58",
+              "videoId": "sJ3rb5WWHJM"
+            },
+            {
+              "episode": 59,
+              "name": "Mighty Morphin Power Rangers E59",
+              "videoId": "nkn5UcXDlIg"
+            },
+            {
+              "episode": 60,
+              "name": "Mighty Morphin Power Rangers E60",
+              "videoId": "Tu2XWMEF5_8"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
