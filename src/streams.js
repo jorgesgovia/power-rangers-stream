@@ -79,11 +79,13 @@ async function resolveYoutube(videoId) {
     const result = await execa(
       ytDlpPath,
       [
+        "--no-update",
+        "--no-warnings",
         "--extractor-args",
-        "youtube:player_client=android",
+        "youtube:player_client=web,android",
         "--get-url",
         "-f",
-        "18",
+        "best[ext=mp4]/best",
         youtubeUrl
       ],
       {
