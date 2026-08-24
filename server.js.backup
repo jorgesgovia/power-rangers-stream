@@ -32,7 +32,6 @@ const manifest = {
     "series"
   ],
 
-  idPrefixes: ["tt"],
   catalogs: []
 };
 
