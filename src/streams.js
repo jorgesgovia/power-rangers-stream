@@ -13,24 +13,25 @@ const inventoryPath = path.join(
   "inventory.json"
 );
 
+const ytDlpPath = path.join(
+  __dirname,
+  "..",
+  "yt-dlp"
+);
+
 let inventory = null;
 
 function loadInventory() {
   if (!inventory) {
     inventory = JSON.parse(
-      fs.readFileSync(
-        inventoryPath,
-        "utf8"
-      )
+      fs.readFileSync(inventoryPath, "utf8")
     );
   }
 
   return inventory;
 }
 
-
 function findSeriesByImdb(imdbId) {
-
   const data = loadInventory();
 
   return data.series.find(
@@ -40,31 +41,23 @@ function findSeriesByImdb(imdbId) {
   );
 }
 
-
 function findEpisode(series, season, episode) {
-
   const s = series.seasons.find(
-    x =>
-      Number(x.season) === Number(season)
+    x => Number(x.season) === Number(season)
   );
 
   if (!s) return null;
 
   return s.episodes.find(
-    x =>
-      Number(x.episode) === Number(episode)
+    x => Number(x.episode) === Number(episode)
   );
 }
 
-
 async function resolveYoutube(videoId) {
-
-  console.log(
-    `🎬 Resolviendo YouTube → ${videoId}`
-  );
+  console.log(`🎬 Resolviendo YouTube → ${videoId}`);
 
   const result = await execa(
-    "./yt-dlp",
+    ytDlpPath,
     [
       "--extractor-args",
       "youtube:player_client=android",
@@ -72,100 +65,67 @@ async function resolveYoutube(videoId) {
       "-f",
       "18",
       `https://www.youtube.com/watch?v=${videoId}`
-    ]
+    ],
+    {
+      timeout: 30000
+    }
   );
 
   return result.stdout.trim();
 }
-
-
 
 export async function getStream(
   imdbId,
   seasonNumber,
   episodeNumber
 ) {
-
-  const series =
-    findSeriesByImdb(imdbId);
-
+  const series = findSeriesByImdb(imdbId);
 
   if (!series) {
-
-    console.log(
-      `⚠️ IMDb no encontrado → ${imdbId}`
-    );
-
+    console.log(`⚠️ IMDb no encontrado → ${imdbId}`);
     return [];
   }
 
-
-  const episode =
-    findEpisode(
-      series,
-      seasonNumber,
-      episodeNumber
-    );
-
+  const episode = findEpisode(
+    series,
+    seasonNumber,
+    episodeNumber
+  );
 
   if (!episode) {
-
-    console.log(
-      "⚠️ Episodio no encontrado"
-    );
-
+    console.log("⚠️ Episodio no encontrado");
     return [];
   }
 
-
   try {
-
-    const directUrl =
-      await resolveYoutube(
-        episode.videoId
-      );
-
-
-    console.log(
-      "✅ URL DIRECTA OBTENIDA"
+    const directUrl = await resolveYoutube(
+      episode.videoId
     );
 
+    console.log("✅ URL DIRECTA OBTENIDA");
+    console.log(`🔗 ${directUrl.substring(0, 120)}...`);
 
     return [
       {
-        name:
-          "Power Rangers Stream",
-
-        title:
-          `${series.name} — ${episode.name}`,
-
-        url:
-          directUrl,
-
-        behaviorHints:
-        {
-          bingeGroup:
-            `power-rangers-${series.slug}`
+        name: "Power Rangers Stream",
+        title: `${series.name} — ${episode.name}`,
+        url: directUrl,
+        behaviorHints: {
+          bingeGroup: `power-rangers-${series.slug}`
         }
       }
     ];
 
-
-  } catch(error) {
-
+  } catch (error) {
     console.log(
       "❌ ERROR YOUTUBE",
-      error.message
+      error.shortMessage || error.message
     );
 
     return [];
   }
 }
 
-
-
 export function getInventory() {
-
   return loadInventory();
-
 }
