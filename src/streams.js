@@ -2,87 +2,112 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __filename =
+  fileURLToPath(import.meta.url);
 
-const inventoryPath = path.join(
-  __dirname,
-  "..",
-  "data",
-  "inventory.json"
-);
+const __dirname =
+  path.dirname(__filename);
+
+const inventoryPath =
+  path.join(
+    __dirname,
+    "..",
+    "data",
+    "inventory.json"
+  );
 
 let inventory = null;
+
+/*
+ * ============================================================
+ * INVENTORY
+ * ============================================================
+ */
 
 function loadInventory() {
 
   if (!inventory) {
 
-    inventory = JSON.parse(
-      fs.readFileSync(
-        inventoryPath,
-        "utf8"
-      )
-    );
+    inventory =
+      JSON.parse(
+        fs.readFileSync(
+          inventoryPath,
+          "utf8"
+        )
+      );
 
   }
 
   return inventory;
 }
 
-function findSeriesByImdb(imdbId) {
+/*
+ * ============================================================
+ * FIND SERIES
+ * ============================================================
+ */
 
-  const data = loadInventory();
+function findSeriesByImdb(
+  imdbId
+) {
+
+  const data =
+    loadInventory();
 
   return data.series.find(
     series =>
-      String(series.imdbId).trim() ===
-      String(imdbId).trim()
+      String(
+        series.imdbId
+      ).trim() ===
+      String(
+        imdbId
+      ).trim()
   );
+
 }
-
-function findEpisode(
-  series,
-  season,
-  episode
-) {
-
-  const s = series.seasons.find(
-    x =>
-      Number(x.season) ===
-      Number(season)
-  );
-
-  if (!s) {
-    return null;
-  }
-
-  return s.episodes.find(
-    x =>
-      Number(x.episode) ===
-      Number(episode)
-  );
-}
-
 
 /*
  * ============================================================
- * YOUTUBE STREAM
+ * FIND EPISODE
  * ============================================================
- *
- * Nuvio reconoce la serie mediante IMDb:
- *
- * tt0106064:1:1
- *
- * y el episodio contiene:
- *
- * videoId → Wj-q428tgFo
- *
- * No resolvemos YouTube mediante Piped.
- *
- * Entregamos directamente el identificador de YouTube
- * al cliente mediante ytId.
- *
+ */
+
+function findEpisode(
+  series,
+  seasonNumber,
+  episodeNumber
+) {
+
+  const season =
+    series.seasons.find(
+      item =>
+        Number(
+          item.season
+        ) ===
+        Number(
+          seasonNumber
+        )
+    );
+
+  if (!season) {
+    return null;
+  }
+
+  return season.episodes.find(
+    episode =>
+      Number(
+        episode.episode
+      ) ===
+      Number(
+        episodeNumber
+      )
+  );
+
+}
+
+/*
+ * ============================================================
+ * GET STREAM
  * ============================================================
  */
 
@@ -93,7 +118,6 @@ export async function getStream(
 ) {
 
   console.log("");
-
   console.log(
     "============================================================"
   );
@@ -121,15 +145,14 @@ export async function getStream(
     episodeNumber
   );
 
-
   /*
-   * ----------------------------------------------------------
-   * BUSCAR SERIE
-   * ----------------------------------------------------------
+   * Find series.
    */
 
   const series =
-    findSeriesByImdb(imdbId);
+    findSeriesByImdb(
+      imdbId
+    );
 
   if (!series) {
 
@@ -137,26 +160,17 @@ export async function getStream(
       "❌ SERIE NO ENCONTRADA"
     );
 
-    console.log(
-      "IMDb recibido →",
-      imdbId
-    );
-
     return [];
 
   }
-
 
   console.log(
     "✅ SERIE ENCONTRADA →",
     series.name
   );
 
-
   /*
-   * ----------------------------------------------------------
-   * BUSCAR EPISODIO
-   * ----------------------------------------------------------
+   * Find episode.
    */
 
   const episode =
@@ -176,17 +190,13 @@ export async function getStream(
 
   }
 
-
   console.log(
     "✅ EPISODIO ENCONTRADO →",
     episode.name
   );
 
-
   /*
-   * ----------------------------------------------------------
-   * YOUTUBE ID
-   * ----------------------------------------------------------
+   * YouTube ID.
    */
 
   const videoId =
@@ -194,56 +204,51 @@ export async function getStream(
       episode.videoId || ""
     ).trim();
 
-
   if (!videoId) {
 
     console.log(
-      "❌ EL EPISODIO NO TIENE YOUTUBE ID"
+      "❌ EPISODIO SIN YouTube ID"
     );
 
     return [];
 
   }
 
-
   console.log(
     "🎬 YouTube ID →",
     videoId
   );
 
-
   /*
-   * ----------------------------------------------------------
-   * RESPUESTA PARA NUVIO
-   * ----------------------------------------------------------
+   * ==========================================================
+   * NUVIO STREAM
+   * ==========================================================
    *
-   * IMPORTANTE:
+   * This is intentionally minimal.
    *
-   * NO usamos:
+   * Nuvio's StreamDto explicitly contains:
    *
-   * url:
-   * https://youtube.com/watch?v=...
+   * name
+   * title
+   * ytId
    *
-   * porque eso sería una página web.
+   * so we let Nuvio resolve the YouTube playback path itself.
    *
-   * Entregamos el identificador mediante ytId.
-   *
-   * ----------------------------------------------------------
+   * ==========================================================
    */
 
   const stream = {
+
     name:
       "YouTube",
+
     title:
       `${series.name} — ${episode.name}`,
+
     ytId:
-      videoId,
-    id:
-      `yt:${videoId}`
+      videoId
+
   };
-
-
-  console.log("");
 
   console.log(
     "============================================================"
@@ -276,13 +281,17 @@ export async function getStream(
     "============================================================"
   );
 
-
   return [
     stream
   ];
 
 }
 
+/*
+ * ============================================================
+ * INVENTORY EXPORT
+ * ============================================================
+ */
 
 export function getInventory() {
 
