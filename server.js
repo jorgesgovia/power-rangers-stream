@@ -16,23 +16,20 @@ const PUBLIC_URL =
 
 const manifest = {
   id: "org.power.rangers.stream",
-
   version: "1.0.0",
-
   name: "Power Rangers Stream",
-
   description:
     "Power Rangers stream addon powered by YouTube.",
-
   resources: [
-    "stream"
+    {
+      name: "stream",
+      types: ["series"],
+      idPrefixes: ["tt"]
+    }
   ],
-
   types: [
     "series"
   ],
-
-  idPrefixes: ["tt"],
   catalogs: []
 };
 
