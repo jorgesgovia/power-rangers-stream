@@ -232,26 +232,14 @@ export async function getStream(
    */
 
   const stream = {
-
     name:
       "YouTube",
-
     title:
       `${series.name} — ${episode.name}`,
-
     ytId:
       videoId,
-
-    behaviorHints: {
-
-      bingeGroup:
-        `power-rangers-${
-          series.slug ||
-          series.imdbId
-        }`
-
-    }
-
+    id:
+      `yt:${videoId}`
   };
 
 

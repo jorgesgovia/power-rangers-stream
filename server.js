@@ -87,6 +87,15 @@ app.get(
         `ID   → ${id}`
       );
 
+      console.log(
+        `🔍 ID RAW RECIBIDO POR NUVIO → [${id}]`
+      );
+
+      console.log(
+        "🔍 PARTES →",
+        id.split(":")
+      );
+
       if (type !== "series") {
         return res.json({
           streams: []
